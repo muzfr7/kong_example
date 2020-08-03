@@ -1,11 +1,13 @@
 # KONG EXAMPLE
 
-#### Create a Docker network
+## KONG SETUP
+
+#### 1. Create a Docker network
 ```
 $ docker network create kong-net
 ```
 
-#### Start a PostgreSQL container by executing
+#### 2. Start a PostgreSQL container by executing
 ```
 $ docker run -d --name kong-database \
     --network=kong-net \
@@ -16,7 +18,7 @@ $ docker run -d --name kong-database \
     postgres:9.6
 ```
 
-#### Prepare your database
+#### 3. Prepare your database
 > Run the database migrations with an ephemeral Kong container..
 ```
 $ docker run --rm \
@@ -29,7 +31,7 @@ $ docker run --rm \
     kong:latest kong migrations bootstrap
 ```
 
-#### Start Kong
+#### 4. Start Kong
 > When the migrations have run and your database is ready, start a Kong container that will connect to your database container, just like the ephemeral migrations container..
 ```
 $ docker run -d --name kong \
@@ -51,11 +53,14 @@ $ docker run -d --name kong \
     kong:latest
 ```
 
-#### Use Kong
-http://localhost:8001/
+#### 5. Use Kong
+http://localhost:8001
+
 http://localhost:8001/services
 
 ---
+
+## YOUR APP SETUP
 
 #### Build and create container for your app
 
