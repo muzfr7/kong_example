@@ -73,3 +73,8 @@ $ docker build . -t kong_example_app
 ```
 $ docker run -p 3000:3000 --name kong_example_app -dit kong_example_app
 ```
+
+#### Use your app
+```
+http://localhost:3000/health/check
+```
