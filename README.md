@@ -54,9 +54,15 @@ $ docker run -d --name kong \
 ```
 
 #### 5. Use Kong
+> Port 8001 is for Kong Admin API to configure the gateway
+
 http://localhost:8001
 
+http://localhost:8001/status
+
 http://localhost:8001/services
+
+> By default, Kong handles proxy requests over port 8000
 
 ---
 
